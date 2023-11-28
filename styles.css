@@ -1,33 +1,43 @@
 *, *::before, *::after {
     box-sizing: border-box;  
+    margin: 0;
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #404040;
     margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 /* =================
     Typography 
    ================= */
+h1, h2, h3, h4, p, .beta-text, .subheading {
+    margin: 1em;
+}
+
 
 h1 {
     font-size: 2.5rem;
     font-weight: 400;
-    text-shadow: 0 2px #816fca;
 }
 
 h2 {
     font-size: 2.25rem;
+    font-weight: 400;
+    margin: 0.167em 0;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
     margin: 0.167em 0;
 }
 
 p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.35;
+    text-align: center;
 }
 
 .beta-text { 
@@ -44,6 +54,7 @@ p {
 .top-text,
 .subheading {
     text-transform: uppercase;
+    font-size: 1rem;
 }
 
 .top-text {
@@ -59,6 +70,56 @@ p {
     font-size: 0.75rem;
     letter-spacing: 1px;
     color: #858585;
+}
+
+/* =================
+    Blockquotes
+   ================= */
+ 
+ /* Blockquote main style */
+ .blockquote {
+    position: relative;
+    font-weight: 800;
+    color: #ffffff;
+    padding: 30px 0;
+    width: 100%;
+    max-width: 500px;
+    z-index: 1;
+    margin: 50px auto;
+    align-self: center;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+}
+
+/* Blockquote header */
+.blockquote h3 {
+    position: relative;
+    font-style: italic;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+/* Blockquote right double quotes */
+.blockquote:after {
+    position: absolute;
+    content: "”";
+    color: rgba(255, 255, 255, 1);
+    font-size: 5rem;
+    line-height: 0;
+    bottom: -0.2em;
+    right: 0.7em;
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding-top: 20px;
+    z-index: 1;
 }
 
 /* =================
@@ -82,8 +143,7 @@ p {
     text-align: center;
     color: #fff;
     background-size: cover;
-    padding-bottom: 1.5em;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('public/rpgc-15th-summer.jpg');    
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('public/rpgc-15th-summer.jpg');    
 }
 
 /* ====================
@@ -91,6 +151,7 @@ p {
    ==================== */
    
 .main-content {
+    justify-content: center;
     align-items: center;
     padding-top: 2.5em;
 }
@@ -103,67 +164,6 @@ p {
 form {
     max-width: 450px;
 }
-
-/* =================
-    Blockquotes
-   ================= */
- 
- /* Blockquote main style */
- .blockquote {
-     position: relative;
-     font-family: 'Montserrat', sans-serif;
-     font-weight: 800;
-     color: #ffffff;
-     padding: 30px 0;
-     width: 100%;
-     max-width: 500px;
-     z-index: 1;
-     margin: 80px auto;
-     align-self: center;
-     border-top: solid 1px;
-     border-bottom: solid 1px;
- }
- 
- /* Blockquote header */
- .blockquote h1 {
-     position: relative;
-     color: #FFFFFF;
-     font-size: 40px;
-     font-weight: 800;
-     line-height: 1;
-     margin: 0;
- }
- 
- /* Blockquote right double quotes */
- .blockquote:after {
-     position: absolute;
-     content: "”";
-     color: rgba(255, 255, 255, 1);
-     font-size: 10rem;
-     line-height: 0;
-     bottom: -43px;
-     right: 30px;
- }
- 
- /* increase header size after 600px */
- @media all and (min-width: 600px) {
-     .blockquote h1 {
-         font-size: 60px;
-    }
- 
- }
- 
- /* Blockquote subheader */
- .blockquote h4 {
-     position: relative;
-     color: #ffffff;
-     font-size: 1.4rem;
-     font-weight: normal;
-     line-height: 1;
-     margin: 0;
-     padding-top: 20px;
-     z-index: 1;
- }
 
 /* =================
     Form
@@ -184,7 +184,7 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #081C3C;
+    border-color: #bf9135;
     background-color: #e6e8ec;
 }
 
@@ -198,20 +198,19 @@ input:focus {
 }
 
 .btn-primary {
-    color: white;
+    color: #ffffff;
     background-color: #081C3C;
     margin-top: 1em;    
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #b7a7f6;
+    background-color: #bf9135;
 }
 
 /* =================
     Media queries 
    ================= */
-
 @media (min-width: 576px) {
     body {
         display: flex;
@@ -232,6 +231,7 @@ input:focus {
     .intro,
     .main-content {
         width: 50%;
+        padding-bottom: 1.5em;
     }
     
     .intro {
@@ -239,7 +239,7 @@ input:focus {
     }
     
     .main-content {
-        justify-content: center;
+        justify-content: space-evenly;
         padding-top: 0;
     }
 }
